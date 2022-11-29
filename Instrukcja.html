@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Szymon Olędzki">
-<meta name="dcterms.date" content="2022-11-23">
+<meta name="dcterms.date" content="2022-11-29">
 
 <title>Instrukcja do połączenia RStudio i Git</title>
 <style>
@@ -127,7 +127,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 23, 2022</p>
+      <p class="date">November 29, 2022</p>
     </div>
   </div>
   
@@ -178,6 +178,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p></p><figcaption class="figure-caption">Do sprawdzenia wersji RStudio należy w programie kliknąć kolejno: <em>Help &gt;&gt; About RStudio</em></figcaption><p></p>
 </figure>
 </div>
+</section>
+<section id="ad-3." class="level2">
+<h2 class="anchored" data-anchor-id="ad-3.">Ad 3.</h2>
+<p>Z oficjalnej <a href="https://git-scm.com/download/win">strony Git</a> pobierz plik instalacyjny odpowiedni dla Twojego systemu operacyjnego. Nie musisz zmieniać żadnych ustawień zaznaczonych domyślnie w kolejnych oknach instalacyjnych.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Opera%20Zrzut%20ekranu_2022-11-29_201840_git-scm.com.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Widok oficjalnej strony głównej systemu kontroli wersji Git</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="ad-4." class="level2">
+<h2 class="anchored" data-anchor-id="ad-4.">Ad 4.</h2>
+<p>Po zainstalowaniu Gita musisz się mu przedstawić. Możesz to zrobić za pomocą trzech prostych komend w konsoli:</p>
+<pre><code>git config --global user.name 'Jane Doe'
+git config --global user.email 'jane@example.com'
+git config --global --list</code></pre>
+<p>W miejscu nazwy użytkownika i adresu e-mail wprowadź swoje dane. Pamiętaj, że musisz podać ten sam adres e-mail, który podałeś w trakcie rejestracji konta na GitHub.</p>
+</section>
+<section id="ad-5." class="level2">
+<h2 class="anchored" data-anchor-id="ad-5.">Ad 5.</h2>
+<p>Ostatnim krokiem jest połączenie RStudio z GitHubem. W RStudio wybierz zakładkę <em>Tools &gt;&gt; Global Options &gt;&gt; Git/SVN</em>. Jeżeli poprawnie zainstalowałeś Gita, w polu <em>Git executable</em> powinna znaleźć się ścieżka dostępu do miejsca na Twoim dysku, gdzie znajduje się jego plik wykonywalny. Pole SSH key powinno być teraz puste. Kliknij teraz przycisk <em>Create SSH key</em>, który znajduje się poniżej, po chwili pojawi się okno, które możesz zamknąć. Następnie wybierz <em>View public key</em> i skopiuj klucz z okna, które się pojawi.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ssh.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Widok zakładki Tools&gt;&gt;Global Options&gt;&gt;Git/SVN w RStudio, po wygenerowaniu klucza SSH</figcaption><p></p>
+</figure>
+</div>
+<p>Jeśli jesteś zalogowany na <a href="github.com">github.com</a>, przejdź do zakładki <em>Settings &gt;&gt; SSH and GPG keys</em> lub przejdź pod adres <a href="https://github.com/settings/keys" class="uri">https://github.com/settings/keys</a> a następnie wybierz opcję <em>New SSH key</em>. W polu tytułu nadaj kluczowi unikalną nazwę, dzięki której będziesz w stanie rozpoznać w jakim celu go utworzyłeś, w tym wypadku możesz nadać mu np. nazwę <em>RStudio</em>. Upewnij się, że w polu <em>Key type</em> wybrana jest opcja <em>Authentication Key</em>, a następnie w polu <em>Key</em> wklej skopiowany z RStudio klucz publiczny i wybierz <em>Add SSH key</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github_ssh.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Widok dodawania nowego klucza SSH w GitHub</figcaption><p></p>
+</figure>
+</div>
+<p>Jeżeli wszystkie kroki wykonałeś poprawnie… Gratulacje! Udało Ci się dodać kontrolę wersji do RStudio!</p>
 </section>
 
 </main>

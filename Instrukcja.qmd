@@ -38,3 +38,33 @@ R.version.string
 ```
 
 ![Do sprawdzenia wersji RStudio należy w programie kliknąć kolejno: *Help \>\> About RStudio*](images/RStudio_do_instr.png)
+
+## Ad 3.
+
+Z oficjalnej [strony Git](https://git-scm.com/download/win) pobierz plik instalacyjny odpowiedni dla Twojego systemu operacyjnego. Nie musisz zmieniać żadnych ustawień zaznaczonych domyślnie w kolejnych oknach instalacyjnych.
+
+![Widok oficjalnej strony głównej systemu kontroli wersji Git](images/Opera%20Zrzut%20ekranu_2022-11-29_201840_git-scm.com.png)
+
+## Ad 4.
+
+Po zainstalowaniu Gita musisz się mu przedstawić. Możesz to zrobić za pomocą trzech prostych komend w konsoli:
+
+```
+git config --global user.name 'Jane Doe'
+git config --global user.email 'jane@example.com'
+git config --global --list
+```
+
+W miejscu nazwy użytkownika i adresu e-mail wprowadź swoje dane. Pamiętaj, że musisz podać ten sam adres e-mail, który podałeś w trakcie rejestracji konta na GitHub.
+
+## Ad 5.
+
+Ostatnim krokiem jest połączenie RStudio z GitHubem. W RStudio wybierz zakładkę *Tools \>\> Global Options \>\> Git/SVN*. Jeżeli poprawnie zainstalowałeś Gita, w polu *Git executable* powinna znaleźć się ścieżka dostępu do miejsca na Twoim dysku, gdzie znajduje się jego plik wykonywalny. Pole SSH key powinno być teraz puste. Kliknij teraz przycisk *Create SSH key*, który znajduje się poniżej, po chwili pojawi się okno, które możesz zamknąć. Następnie wybierz *View public key* i skopiuj klucz z okna, które się pojawi.
+
+![Widok zakładki Tools\>\>Global Options\>\>Git/SVN w RStudio, po wygenerowaniu klucza SSH](images/ssh.png)
+
+Jeśli jesteś zalogowany na [github.com](github.com), przejdź do zakładki *Settings \>\> SSH and GPG keys* lub przejdź pod adres <https://github.com/settings/keys> a następnie wybierz opcję *New SSH key*. W polu tytułu nadaj kluczowi unikalną nazwę, dzięki której będziesz w stanie rozpoznać w jakim celu go utworzyłeś, w tym wypadku możesz nadać mu np. nazwę *RStudio*. Upewnij się, że w polu *Key type* wybrana jest opcja *Authentication Key*, a następnie w polu *Key* wklej skopiowany z RStudio klucz publiczny i wybierz *Add SSH key*.
+
+![Widok dodawania nowego klucza SSH w GitHub](images/github_ssh.png)
+
+Jeżeli wszystkie kroki wykonałeś poprawnie... Gratulacje! Udało Ci się dodać kontrolę wersji do RStudio!
